@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "api": "apps/api",
+    "api-interfaces": "libs/api-interfaces",
+    "task-management-web-app": "apps/task-management-web-app",
+    "task-management-web-app-e2e": "apps/task-management-web-app-e2e"
+  }
+}

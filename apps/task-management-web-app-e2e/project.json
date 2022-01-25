@@ -1,0 +1,28 @@
+{
+  "root": "apps/task-management-web-app-e2e",
+  "sourceRoot": "apps/task-management-web-app-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/task-management-web-app-e2e/cypress.json",
+        "devServerTarget": "task-management-web-app:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "task-management-web-app:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/task-management-web-app-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["task-management-web-app"]
+}
