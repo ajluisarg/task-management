@@ -1,0 +1,13 @@
+
+.content{
+
+  display: flex;
+  flex-direction: column;
+  .menu{
+    align-self: flex-end;
+  }
+  .task-board{
+    border: dotted #000 3px;
+  }
+}
+

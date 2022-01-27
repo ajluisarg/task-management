@@ -1,0 +1,24 @@
+<div class="container">
+  <p>
+    Can I help you?
+  </p>
+
+  <div>
+    There are currently <strong>{{users}}</strong> users online. Start
+      chatting!
+  </div>
+  <mat-divider></mat-divider>
+
+  <p *ngFor="let message of messages"> {{message}} </p>
+
+  <textarea matInput [(ngModel)]="message" placeholder="type message..." (keyup.enter)="addChat()">
+
+  </textarea>
+
+  <div class="send-button">
+    <button mat-mini-fab color="primary" (click)="addChat()">
+      <mat-icon>send</mat-icon>
+    </button>
+    <span>Send</span>
+  </div>
+</div>

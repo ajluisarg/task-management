@@ -1,9 +1,32 @@
-<div style="text-align: center">
-  <h1>Welcome to task-management-web-app!</h1>
-  <img
-    width="450"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-    alt="Nx - Smart, Fast and Extensible Build System"
-  />
+<div class="content">
+
+<div class="task-board">
+
+  <div class="board" cdkDropList [cdkDropListData]="tracks" (cdkDropListDropped)="onTrackDrop($event)" cdkDropListOrientation="horizontal">
+
+    <div *ngFor="let track of tracks">
+
+      <h2 cdkDragHandle>{{track.title}}</h2>
+
+      <div class="card-list-content" cdkDropList [id]="track.id" [cdkDropListData]="track.tasks"
+        [cdkDropListConnectedTo]="trackIds" (cdkDropListDropped)="onTalkDrop($event)">
+
+          <task-management-task [title]="task.title" [description]="task.description" *ngFor="let task of track.tasks" cdkDrag cdkDragBoundary=".task-board">
+
+          </task-management-task>
+
+      </div>
+
+    </div>
+
+  </div>
 </div>
-<div>Message: {{ hello$ | async | json }}</div>
+
+
+
+  <div class="menu">
+    <div class="chat">
+      <task-management-chat></task-management-chat>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+:host{
+
+  .container{
+    margin: 5px;
+
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: #3f51b5;
+    padding: 10px;
+  }
+  textarea{
+    width: 90%;
+  }
+  .send-button{
+    button{
+      margin-top: 20px;
+    }
+    span{
+      margin-left: 5px;
+    }
+  }
+}

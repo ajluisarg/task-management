@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/task-management-web-app",
         "index": "apps/task-management-web-app/src/index.html",
@@ -18,7 +20,10 @@
           "apps/task-management-web-app/src/favicon.ico",
           "apps/task-management-web-app/src/assets"
         ],
-        "styles": ["apps/task-management-web-app/src/styles.scss"],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+          "apps/task-management-web-app/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -86,7 +91,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/task-management-web-app"],
+      "outputs": [
+        "coverage/apps/task-management-web-app"
+      ],
       "options": {
         "jestConfig": "apps/task-management-web-app/jest.config.js",
         "passWithNoTests": true
