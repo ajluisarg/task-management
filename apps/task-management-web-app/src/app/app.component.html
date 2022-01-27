@@ -1,28 +1,21 @@
-<div class="content">
+<div class="header">
+  <mat-icon>assignment_turned_in</mat-icon>
+  <h1>Task management</h1>
+</div>
+<div class="container">
+  <div class="task-board" cdkDropList [cdkDropListData]="tracks" (cdkDropListDropped)="onTrackDrop($event)" >
 
-<div class="task-board">
-
-  <div class="board" cdkDropList [cdkDropListData]="tracks" (cdkDropListDropped)="onTrackDrop($event)" cdkDropListOrientation="horizontal">
-
-    <div *ngFor="let track of tracks">
-
-      <h2 cdkDragHandle>{{track.title}}</h2>
-
+    <div class="card-list" *ngFor="let track of tracks">
+      <h2 class="card-list-title" cdkDragHandle>{{track.title}}</h2>
       <div class="card-list-content" cdkDropList [id]="track.id" [cdkDropListData]="track.tasks"
         [cdkDropListConnectedTo]="trackIds" (cdkDropListDropped)="onTalkDrop($event)">
 
-          <task-management-task [title]="task.title" [description]="task.description" *ngFor="let task of track.tasks" cdkDrag cdkDragBoundary=".task-board">
-
+          <task-management-task [title]="task.title" [description]="task.description" [type]="task.type" *ngFor="let task of track.tasks" cdkDrag cdkDragBoundary=".task-board">
           </task-management-task>
 
       </div>
-
-    </div>
-
+      </div>
   </div>
-</div>
-
-
 
   <div class="menu">
     <div class="chat">
@@ -30,3 +23,6 @@
     </div>
   </div>
 </div>
+
+
+

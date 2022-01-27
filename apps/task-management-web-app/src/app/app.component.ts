@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Track, Task } from './task/shared/track.model';
+import { Track, Task, TaskType } from './task/shared/track.model';
 import {
   CdkDragDrop,
   moveItemInArray,
@@ -11,54 +11,51 @@ import {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent{
+export class AppComponent {
   public tracks: Track[] = [
     {
-      "title": "Todo",
-      "id": "todo",
-      "tasks": [
+      title: 'Todo',
+      id: 'todo',
+      tasks: [
         {
-          "id": "first-task",
-          "title": "First Task",
-          "description": "This is my first task"
-        }
-      ]
+          id: 'OB-1288',
+          title: 'Up ng version',
+          description: 'Update onboarding angular version',
+          type: TaskType.TECH,
+        },
+        {
+          id: 'OB-1238',
+          title: 'Improve deploy',
+          description: 'Enhance deploy time',
+          type: TaskType.SPYKE,
+        },
+      ],
     },
     {
-      "title": "In Progress",
-      "id": "inprogress",
-      "tasks": [
+      title: 'In Progress',
+      id: 'inprogress',
+      tasks: [
         {
-          "id": "first-task",
-          "title": "First Task",
-          "description": "This is my first task"
-        }
-      ]
+          id: '0B-1235',
+          title: 'Consents requirements',
+          description: 'Create component, business logic and styles',
+          type: TaskType.UHD,
+        },
+      ],
     },
     {
-      "title": "D-Done",
-      "id": "ddone",
-      "tasks": [
+      title: 'Done',
+      id: 'done',
+      tasks: [
         {
-          "id": "first-task",
-          "title": "First Task",
-          "description": "This is my first task"
-        }
-      ]
+          id: 'OB-1289',
+          title: 'Analyze wdio',
+          description: 'Change testing framework',
+          type: TaskType.SPYKE,
+        },
+      ],
     },
-    {
-      "title": "QA Pass",
-      "id": "qapass",
-      "tasks": [
-        {
-          "id": "first-task",
-          "title": "First Task",
-          "description": "This is my first task"
-        }
-      ]
-    }
-  ]
-  ;
+  ];
 
   get trackIds(): string[] {
     return this.tracks.map((track) => track.id);
@@ -91,4 +88,6 @@ export class AppComponent{
       event.currentIndex
     );
   }
+
+
 }

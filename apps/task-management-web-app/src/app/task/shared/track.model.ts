@@ -8,4 +8,11 @@ export interface Task {
   title: string;
   description: string;
   id: string;
+  type: TaskType
+}
+
+export enum TaskType {
+  TECH,
+  SPYKE,
+  UHD
 }
